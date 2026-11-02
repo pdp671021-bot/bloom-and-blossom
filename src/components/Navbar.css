@@ -1,0 +1,214 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.navbar--scrolled {
+  border-bottom-color: var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar__inner {
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--green-900);
+  transition: opacity 0.2s;
+}
+
+.navbar__brand:hover {
+  opacity: 0.85;
+}
+
+.navbar__brand svg {
+  transition: transform 0.5s var(--ease);
+}
+
+.navbar__brand:hover svg {
+  transform: rotate(-12deg) scale(1.05);
+}
+
+/* ---- Меню (мобільне за замовчуванням) ---- */
+.navbar__menu {
+  position: absolute;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 16px 20px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
+}
+
+.navbar__menu--open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.navbar__link {
+  position: relative;
+  display: block;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.navbar__link:hover {
+  color: var(--green-700);
+  background: var(--green-50);
+}
+
+.navbar__link--active {
+  color: var(--green-700);
+  background: var(--green-100);
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ---- Іконка кошика ---- */
+.navbar__cart {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--green-900);
+  transition: background-color 0.2s, transform 0.25s var(--ease);
+}
+
+.navbar__cart:hover,
+.navbar__cart--active {
+  background: var(--green-100);
+  color: var(--green-700);
+}
+
+.navbar__cart:hover {
+  transform: translateY(-1px);
+}
+
+.navbar__badge {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  background: var(--green-700);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  border: 2px solid var(--white);
+}
+
+.navbar__badge--bump {
+  animation: badge-bump 0.35s var(--ease);
+}
+
+@keyframes badge-bump {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+
+/* ---- Бургер ---- */
+.navbar__toggle {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.navbar__toggle:hover {
+  background: var(--green-50);
+}
+
+.navbar__toggle span {
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--green-900);
+  transition: transform 0.3s var(--ease), opacity 0.2s;
+}
+
+.navbar__toggle--open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__toggle--open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__toggle--open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---- Десктоп ---- */
+@media (min-width: 768px) {
+  .navbar__menu {
+    position: static;
+    flex-direction: row;
+    gap: 6px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .navbar__link {
+    padding: 8px 16px;
+    border-radius: var(--radius-pill);
+  }
+
+  .navbar__toggle {
+    display: none;
+  }
+}

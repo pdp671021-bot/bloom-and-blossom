@@ -1,0 +1,119 @@
+.products-page__content {
+  padding-bottom: 56px;
+}
+
+/* ---------- Панель інструментів ---------- */
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 18px 0 24px;
+}
+
+@media (min-width: 768px) {
+  .toolbar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.toolbar__search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 420px;
+  color: var(--text-muted);
+}
+
+.toolbar__search svg {
+  position: absolute;
+  left: 16px;
+  pointer-events: none;
+}
+
+.toolbar__search input {
+  width: 100%;
+  height: 46px;
+  padding: 0 16px 0 44px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.toolbar__search input:focus {
+  outline: none;
+  border-color: var(--green-400);
+  box-shadow: 0 0 0 4px rgba(102, 187, 106, 0.18);
+}
+
+.toolbar__right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.toolbar__count {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.toolbar__count strong {
+  color: var(--text);
+}
+
+.toolbar__sort select {
+  height: 46px;
+  padding: 0 40px 0 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--white)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%232E7D32' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")
+    no-repeat right 16px center;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color 0.2s;
+}
+
+.toolbar__sort select:hover,
+.toolbar__sort select:focus {
+  border-color: var(--green-400);
+  outline: none;
+}
+
+/* ---------- Порожній результат ---------- */
+.products-page__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 56px 20px;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  border: 1px dashed var(--border);
+  text-align: center;
+}
+
+.products-page__empty span {
+  font-size: 3rem;
+}
+
+.products-page__empty h2 {
+  font-size: 1.5rem;
+}
+
+.products-page__empty p {
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}

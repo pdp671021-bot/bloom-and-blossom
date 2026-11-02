@@ -1,0 +1,116 @@
+.footer {
+  margin-top: 40px;
+  background: var(--green-900);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  padding-top: 56px;
+  padding-bottom: 40px;
+}
+
+@media (min-width: 640px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer__grid {
+    grid-template-columns: 2fr 1fr 1fr 1.3fr;
+    gap: 40px;
+  }
+}
+
+.footer__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.footer__about p {
+  margin-top: 14px;
+  max-width: 340px;
+  font-size: 0.95rem;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.footer__socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  transition: background-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.footer__socials a:hover {
+  background: var(--green-400);
+  transform: translateY(-3px);
+}
+
+.footer__heading {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 14px;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+.footer__links a {
+  transition: color 0.2s, padding-left 0.25s var(--ease);
+}
+
+.footer__links a:hover {
+  color: var(--green-400);
+  padding-left: 4px;
+}
+
+.footer__contacts a:hover {
+  padding-left: 0;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer__bottom-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (min-width: 640px) {
+  .footer__bottom-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

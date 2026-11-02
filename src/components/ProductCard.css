@@ -1,0 +1,113 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.product-card__media {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card:hover .flower-image svg,
+.product-card:hover .flower-image img {
+  transform: scale(1.06);
+}
+
+.product-card__badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  color: var(--green-700);
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+
+.product-card__in-cart {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--green-700);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+
+.product-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 18px 18px 20px;
+}
+
+.product-card__category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green-400);
+}
+
+.product-card__name {
+  margin-top: 6px;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.product-card__description {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.product-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.product-card__price {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--green-900);
+  white-space: nowrap;
+}
+
+.product-card__button {
+  min-height: 42px;
+  padding: 0 18px;
+  font-size: 0.9rem;
+}
+
+.product-card__button--added {
+  background: var(--green-400);
+  box-shadow: 0 6px 16px rgba(102, 187, 106, 0.4);
+}
+
+.product-card__button--added:hover:not(:disabled) {
+  background: var(--green-400);
+}
